@@ -1,0 +1,18 @@
+<form [formGroup]="login_form" (ngSubmit)="onsubmit()">
+    <mat-form-field class="cl_width">
+    
+        <input type="text" formControlName="username" matInput placeholder="Username">
+        <mat-error>Enter username</mat-error>
+
+</mat-form-field>
+<mat-form-field class="cl_width">
+    
+    <input type="text" formControlName="password" matInput placeholder="Password">
+    <mat-error>Enter password</mat-error>
+
+</mat-form-field>
+
+    
+    <button type="submit" [disabled]="!login_form.valid" mat-flat-button color="primary"  class="cl_width">Login</button>
+</form>
+

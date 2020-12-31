@@ -1,0 +1,54 @@
+<form [formGroup]="signup_form">
+    <mat-form-field class="cl_width">
+    
+        <input type="text" formControlName="fname" matInput placeholder="Full Name">
+        <mat-error>Enter name</mat-error>
+
+</mat-form-field>
+
+<mat-form-field class="cl_width">
+    
+    <input type="text" formControlName="age" matInput placeholder="Age">
+
+</mat-form-field>
+<div class="margintopbottom">
+<label>Gender:</label>
+<mat-radio-group formControlName="gender">
+    <mat-radio-button value="male"  class="sepradio">Male</mat-radio-button>
+    <mat-radio-button value="female" class="sepradio">Female</mat-radio-button>
+    <mat-radio-button value="others" class="sepradio">others</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<mat-form-field>
+    <mat-select formControlName="department" placeholder="Department">
+        <mat-option *ngFor="let dept of departments" [value]="dept">{{dept}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+
+<div class="margintopbottom1">
+    <label>Contact Preference:</label>
+    <mat-radio-group>
+        <mat-radio-button value="email"  class="sepradio" (click)="oncpchange('email')">Email</mat-radio-button>
+        <mat-radio-button value="phone" class="sepradio" (click)="oncpchange('phone')">Phone</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  <mat-form-field class="cl_width">
+    
+    <input type="text" formControlName="email" matInput placeholder="Email">
+    <mat-error>Valid email required</mat-error>
+    
+
+</mat-form-field>
+<mat-form-field class="cl_width">
+    <span matPrefix>+91 &nbsp;</span>
+    <input type="text" formControlName="phone" matInput placeholder="Phone">
+    <mat-error>Valid phone number required</mat-error>
+
+</mat-form-field>
+  <div class="button_row"></div>  
+    <button (click)="onsignup()" [disabled]="!signup_form.valid" mat-flat-button color="primary" class="sepbutton">Signup</button>
+    <button mat-flat-button color="warn" (click)="onclear()" class="sepbutton">Clear</button>
+</form>
+

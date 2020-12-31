@@ -1,0 +1,101 @@
+<mat-toolbar class="second_toolbar">Truck Request Solution</mat-toolbar>
+<mat-toolbar class="third_toolbar">TRN Number (6)</mat-toolbar>
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened class="drawer">
+        <mat-list  class="list_container">
+            <mat-list *ngFor="let item of trn"  class="list">
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="rectangle_box"></div>
+                <div>
+                  <div class="text1">{{item.trn}}</div>
+                  <div class="text2">{{item.date}}</div>
+                </div>
+              </div>
+            </mat-list>
+          </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="main_page" fxLayout="colomn">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-form-field>
+            <mat-label>Contact Person*</mat-label>
+          <input type="text" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Mobile No.</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Req.Date*</mat-label>
+      <input type="text" autocomplete="off">
+    </mat-form-field>
+        </div>
+        <mat-form-field>
+          <mat-label>Pack Type</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+
+      <div fxLayout="column" fxLayoutAlign="center end" class="titlediv">
+        <span class="title">Item Details</span>
+        <div class="underline"></div> 
+        </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field>
+          <mat-label>Shift</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Pickup Plant</mat-label>
+      <input type="text" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Pickup Location*</mat-label>
+    <input type="text" autocomplete="off">
+  </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field>
+          <mat-label>Drop Plant</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Drop Location</mat-label>
+      <input type="text" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Dom</mat-label>
+    <input type="text" autocomplete="off">
+  </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field>
+          <mat-label>No.of Truck</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Truck Type</mat-label>
+      <input type="text" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Assign Truck</mat-label>
+    <input type="text" autocomplete="off">
+  </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-form-field>
+          <mat-label>Delivery Date</mat-label>
+        <input type="text" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Delivery Quality</mat-label>
+      <input type="text" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Transporter</mat-label>
+    <input type="text" autocomplete="off">
+  </mat-form-field>
+      </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>

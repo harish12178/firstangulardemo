@@ -1,0 +1,13 @@
+.main_toolbar{
+    background: rgba(0,0,0,0.8);
+    justify-content: space-between;
+    color: lightgray;
+    font-size: x-large;
+}
+.user{
+    font-size: initial;
+    font-family: inherit;
+}
+.tbspacing{
+    margin-left: 2rem;
+}

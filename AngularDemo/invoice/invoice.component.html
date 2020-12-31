@@ -1,0 +1,136 @@
+<div class="formmargin">
+  <div fxLayout="column" fxLayoutAlign="center end" class="titlediv">
+    <span class="title">Search</span>
+    <div class="underline"></div> 
+    </div>
+<form [formGroup]="search_form" (ngSubmit)="handle_search()">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="width4">
+        
+          <mat-form-field class="width5">
+              <mat-label>Inv. From Date</mat-label>
+              <input matInput [matDatepicker]="picker1" (dateInput)="getbydate()" (dateChange)="getbydate()" class="textsize" autocomplete="off" formControlName="iv_from_date">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
+                <img src="assets/images/calendar.svg" matDatepickerToggleIcon width="20px">
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          
+
+          
+          <mat-form-field class="width5">
+              <mat-label>Inv. To Date</mat-label>
+              <input matInput [matDatepicker]="picker2" (dateInput)="getbydate()" (dateChange)="getbydate()" class="textsize" autocomplete="off" formControlName="iv_to_date">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <img src="assets/images/calendar.svg" matDatepickerToggleIcon width="20px">
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          
+      </div>
+  <mat-form-field class="width4">
+      <input type="text"  matInput placeholder="PO Number" class="textsize" autocomplete="off" formControlName="po_number">
+  </mat-form-field>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" class="topspace">
+  <mat-form-field class="width4">
+      <input type="text"  matInput placeholder="Invoice Number" class="textsize" autocomplete="off" formControlName="iv_number">
+  </mat-form-field>
+
+  <div fxLayout="column" fxLayoutAllign="start start"  class="width4 height1">
+    <mat-label class="status">Status</mat-label>
+  <div>   
+      <mat-radio-group formControlName="status">
+        <mat-radio-button>All</mat-radio-button>
+      <mat-radio-button value="Open" class="sepbuttons">Open</mat-radio-button>
+      <mat-radio-button value="Closed" class="sepbuttons">Closed</mat-radio-button>
+    </mat-radio-group>
+    <button mat-raised-button class="sepbuttons button" type="submit" [disabled]="!search_form.valid">Search</button>
+  </div>
+</div>
+</div>
+</form>
+
+<div fxLayout="column" fxLayoutAlign="center end" class="titlediv">
+<span class="title">Invoice</span>
+<div class="underline"></div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="end center">
+    <div class="box clickable" fxLayout="row" fxLayoutAlign="space-evenly center">
+        <img src="assets/images/excel.svg" width="20px">
+        <span class="textprop">Download to Excel</span>
+    </div>
+</div>
+<div class="table">
+    <mat-table [dataSource]="dataSource" class="tableborder">
+       
+      <ng-container matColumnDef="ivno">
+        <mat-header-cell *matHeaderCellDef class="paydoc width3"> Invoice No </mat-header-cell>
+        <mat-cell *matCellDef="let element;index as i" class="paydoccell width3"> 
+          <div fxLayout="row" fxLayoutAlign="space-evenly center" >
+            <div class="divbox" [ngStyle]="{'background-color':i%2==0 ? '#d87e39' : '#6f52ed'}"></div>
+            <label class="boldtext">{{element.InvoiceNo}}</label>
+          </div>  
+        </mat-cell>
+      </ng-container>
+      
+  
+        <ng-container matColumnDef="ivdt">
+          <mat-header-cell *matHeaderCellDef class="headercolor cellmargin width3"> Invoice Dt </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="aligncells cellmargin width3 boldtext"> {{element.InvoiceDate | date:'dd/MM/yyyy'}} </mat-cell>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="por">
+          <mat-header-cell *matHeaderCellDef class="headercolor cellmargin width3"> PO Ref </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="aligncells cellmargin width3 boldtext"> {{element.PoReference}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="ivamt">
+          <mat-header-cell *matHeaderCellDef class="headercolor cellmargin width3"> Invoice Amt </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="aligncells cellmargin width3 boldtext"> {{element.InvoiceAmount}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="pamt">
+            <mat-header-cell *matHeaderCellDef class="headercolor cellmargin width3"> Paid Amt </mat-header-cell>
+            <mat-cell *matCellDef="let element" class="aligncells cellmargin width3 boldtext"> {{element.PaidAmount}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef class="headercolor cellmargin width3"> Date </mat-header-cell>
+            <mat-cell *matCellDef="let element" class="aligncells cellmargin width3 boldtext"> {{element.PODDate | date:'dd/MM/yyyy'}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef class="headercolor alignlast width1"> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element" class="aligncells alignlast width1"> 
+              <div fxLayout="row" fxLayoutAlign="space-evenly center" class="statuscss">
+                <label class="statustxt">{{element.Status}} </label>
+              </div>
+            </mat-cell>
+          </ng-container>
+    
+        <ng-container matColumnDef="doc">
+          <mat-header-cell *matHeaderCellDef class="headercolor alignlast width2 remborder aligndoc"> Document </mat-header-cell>
+          <mat-cell *matCellDef="let element" class="aligncells alignlast width2 remborder aligndoc doctext"> {{element.AttID}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="loading">
+          <mat-footer-cell *matFooterCellDef colspan="6" class="footer">Fetching data...</mat-footer-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"  class="colheader"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+      
+      </mat-table>
+      <mat-progress-bar mode="indeterminate" [ngClass]="{'hide':dataSource!=null}"></mat-progress-bar>
+    </div>
+
+  </div>
+
+
+        
+  

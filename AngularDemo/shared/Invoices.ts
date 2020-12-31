@@ -1,0 +1,24 @@
+export interface Invoices{
+    Id:number;
+    Client:string;
+    Company:string;
+    Type:string;
+    PatnerId:string;
+    FiscalYear:string;
+    IsActive:boolean;
+    CreatedOn:string;
+    CreatedBy:string;
+    ModifiedOn:string;
+    ModifiedBy:string;
+    InvoiceNo:string; 
+    InvoiceDate:string;
+    InvoiceAmount:number;
+    PoReference:string;
+    PaidAmount:number;
+    Currency:string;
+    DateofPayment:string;
+    Status:string;
+    AttID:string;
+    PODDate:string;
+    PODConfirmedBy:string;
+}

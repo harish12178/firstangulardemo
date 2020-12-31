@@ -1,0 +1,89 @@
+
+  <div fxLayout="row" class="formwidth" fxLayoutGap="3rem">
+    <form [formGroup]="invoice_form">
+    <div fxLayout="column" fxLayoutGap="10px">
+    
+    <input formControlName="Client" placeholder="Client" type="text">
+    <input formControlName="Company" placeholder="Company" type="text">
+    <input formControlName="Type" placeholder="Type" type="text">
+    <input formControlName="PatnerId" placeholder="PatnerId" type="text">
+    <input formControlName="FiscalYear" placeholder="FiscalYear" type="text">
+    <mat-checkbox formControlName="IsActive" >Active</mat-checkbox>
+    <input formControlName="CreatedOn" placeholder="CreatedOn" type="datetime">
+    
+    <input formControlName="CreatedBy" placeholder="CreatedBy" type="text">
+    <input formControlName="ModifiedOn" placeholder="ModifiedOn" type="datetime">
+    
+    <input formControlName="ModifiedBy" placeholder="ModifiedBy" type="text">
+    <input formControlName="InvoiceNo" placeholder="InvoiceNo" type="text">
+    <input formControlName="InvoiceDate" placeholder="InvoiceDate" type="datetime">
+    
+    <input formControlName="InvoiceAmount" placeholder="InvoiceAmount" type="number">
+    <input formControlName="PoReference" placeholder="PoReference" type="text">
+    <input formControlName="PaidAmount" placeholder="PaidAmount" type="number">
+    <input formControlName="Currency" placeholder="Currency" type="text">
+    <input formControlName="DateofPayment" placeholder="DateofPayment" type="datetime">
+    
+      <label>Status:</label>
+      <mat-radio-group formControlName="Status">
+          <mat-radio-button value="open"  >Open</mat-radio-button>
+          <mat-radio-button value="closed" class="sep">Closed</mat-radio-button>
+        </mat-radio-group>
+      
+   
+    <input formControlName="AttID" placeholder="AttID" type="text">
+    <input formControlName="PODDate" placeholder="PODDate" type="datetime">
+    
+    <input formControlName="PODConfirmedBy" placeholder="PODConfirmedBy" type="text">
+    <button type="submit" (click)="handlesubmit()">Submit</button>
+    <button (click)="handleclear()">Clear</button>
+    <button (click)="handlegotoinvoice()">Go to Invoice</button>
+  
+</div>
+</form>
+<form [formGroup]="payments_form">
+<div fxLayout="column" fxLayoutGap="10px">
+  
+  <input formControlName="Client" placeholder="Client" type="text">
+  <input formControlName="Company" placeholder="Company" type="text">
+  <input formControlName="Type" placeholder="Type" type="text">
+  <input formControlName="PatnerId" placeholder="PatnerId" type="text">
+  <input formControlName="FiscalYear" placeholder="FiscalYear" type="text">
+  <mat-checkbox formControlName="IsActive" >Active</mat-checkbox>
+  <mat-form-field>
+    <mat-label>CreatedOn</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="CreatedOn" type="datetime">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  
+  <input formControlName="CreatedBy" placeholder="CreatedBy" type="text">
+  <mat-form-field>
+  <mat-label>ModifiedOn</mat-label>
+    <input matInput [matDatepicker]="picker1" formControlName="ModifiedOn" type="datetime">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  
+  
+  <input formControlName="ModifiedBy" placeholder="ModifiedBy" type="text">
+  <input formControlName="PaymentDoc" placeholder="PaymentDoc" type="text">
+  <mat-form-field>
+  <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker2" formControlName="Date" type="datetime">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+  
+  <input formControlName="Amount" placeholder="Amount" type="number">
+  <input formControlName="Currency" placeholder="Currency" type="text">
+  <input formControlName="Remark" placeholder="Remark" type="text">
+  <input formControlName="Attachment" placeholder="Attachment" type="text">
+  <button type="submit" (click)="handlesubmit1()">Submit</button>
+    <button (click)="handleclear1()">Clear</button>
+    <button (click)="handlegotoinvoice1()">Go to Payments</button>
+</div>
+</form>
+</div>
+

@@ -1,0 +1,158 @@
+.box{
+    border-radius: 5px;
+  border: solid 2px #2e7d32;
+  background-color: #ffffff;
+  width: 12rem;
+  height: 2.5rem;
+ 
+}
+.textprop{
+    font-size: smaller;
+    font-weight: 500;
+}
+.table{
+    width: 100%;
+    padding-bottom: 3rem;
+    padding-top: 1.5rem;
+}
+.colheader{
+    background-color: #343436;
+}
+.headercolor{
+    color: white; 
+    
+    border-right:1px solid #dbd9d9 ;
+}
+.aligncells{
+    
+    border-right:1px solid #dbd9d9 ;
+}
+.tableborder{
+    border: 1px solid #dbd9d9;
+}
+.textsize{
+    font-size: large;
+    font-weight: 500;
+}
+.alignlast{
+    justify-content: center;
+}
+.cellmargin{
+    padding-left: 1rem;
+}
+.width1{
+    max-width: 15%;
+}
+.width2{
+    max-width: 20%;
+}
+.width3{
+    max-width: 10%;
+}
+.remborder{
+    border-right: none;
+}
+.formmargin{
+    padding-left: 3%;
+    padding-right: 3%;
+    
+}
+.width4{
+    width: 45%;
+}
+.width5{
+    width: 45%;
+}
+.sepbuttons{
+    margin-left: 15%;
+}
+.topspace{
+    margin-top: 1rem;
+}
+.status{
+    opacity:0.6;
+}
+.height1{
+    height: 65px;
+}
+.boldtext{
+    font-weight: 500;
+    font-size: unset;
+}
+.doctext{
+    text-decoration: underline;
+    color: #6fa3e2;
+    cursor: pointer;
+    
+}
+.divbox{
+    width: 12px;
+    height: 22px;
+  opacity: 0.6;
+  margin-right: 18px;
+}
+.paydoc{
+    color: white; 
+    border-right:1px solid #dbd9d9 ;
+    margin-left: -24px;
+    justify-content: center;
+}
+.paydoccell{
+    border-right:1px solid #dbd9d9 ;
+    margin-left: -24px;
+}
+.statuscss{
+    border-radius: 4px;
+  background-color: #dbffe0;
+  width: 80px;
+  height: 20px;
+}
+.statustxt{
+    font-size: unset;
+}
+.clickable{
+    cursor: pointer;
+}
+.underline{
+    height: 4px;
+    width:75%;
+    border-radius: 2px;
+    background-color: #efb577;
+    margin-top: 5px;
+}
+.titlediv{
+    width: fit-content;
+    padding-top:2rem ;
+    padding-bottom: 1rem;
+}
+.title{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: unset;
+}
+.button{
+    color: white;
+    background-color: lightsalmon;
+}
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+       /*click effect color change*/
+    background-color: #44a200 !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #44a200 !important;   /*inner circle color change*/
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+   border-color:#44a200!important; /*outer ring color change*/
+}
+.aligndoc{
+    margin-left: 20px;
+}
+.footer{
+    justify-content: center;
+    font-style: italic;
+}
+.hide{
+    display: none;
+}

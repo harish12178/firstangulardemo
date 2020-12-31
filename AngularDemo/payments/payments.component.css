@@ -1,0 +1,109 @@
+.datewidth1{
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+.datewidth2{
+    width: 40%;
+}
+.table{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.colheader{
+    background-color: #343436;
+}
+.headercolor{
+    color: white; 
+    justify-content: center;
+    border-right:1px solid #dbd9d9 ;
+}
+.aligncells{
+    justify-content: center;
+    border-right:1px solid #dbd9d9 ;
+}
+.tableborder{
+    border: 1px solid #dbd9d9;
+}
+.textsize{
+    font-size: large;
+    font-weight: 500;
+}
+.remborder{
+    border-right: none;
+}
+.doctext{
+    text-decoration: underline;
+    color: #6fa3e2;
+    cursor: pointer;
+}
+.boldtext{
+    font-weight: 500;
+    font-size: unset;
+}
+.doccss{
+    border-radius: 4px;
+    border: solid 1px #cccccc;
+    width: fit-content;
+    
+}
+.smalltext{
+    font-size: x-small;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cutebox{
+    width: 28px;
+    height: 26px;
+  border-radius: 4px;
+  background-color: #f7e7d6;
+}
+.cover{
+    height: 32px;
+    margin-left: 5px;
+}
+.divbox{
+    width: 12px;
+    height: 22px;
+  opacity: 0.6;
+  margin-right: 18px;
+}
+.paydoc{
+    color: white; 
+    border-right:1px solid #dbd9d9 ;
+    margin-left: -24px;
+    justify-content: center;
+}
+.paydoccell{
+    border-right:1px solid #dbd9d9 ;
+    margin-left: -24px;
+}
+.clickable{
+    cursor: pointer;
+}
+.wrapper{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.remark{
+    margin-left: 15px;
+}
+.width1{
+    max-width: 24%;
+}
+.width2{
+    max-width: 18%;
+}
+.alignpaydoc{
+    margin-left:20px;
+}
+.cellheight{
+    height: 70px;
+}
+.footer{
+    justify-content: center;
+    font-style: italic;
+}
+.hide{
+    display: none;
+}

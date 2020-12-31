@@ -1,0 +1,19 @@
+export interface Payments{
+    Id:number;
+    Client:string;
+    Company:string;
+    Type:string;
+    PatnerId:string;
+    FiscalYear:string;
+    PaymentDoc:string;
+    Date:Date;
+    Amount:number;
+    Currency:string;
+    Remark:string;
+    Attachment:string;
+    IsActive:boolean;
+    CreatedOn:Date;
+    CreatedBy:string;
+    ModifiedOn:Date;
+    ModifiedBy:string;
+}

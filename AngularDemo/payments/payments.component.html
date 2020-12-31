@@ -1,0 +1,75 @@
+<div class="wrapper">
+    <div class="datewidth1" fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-form-field class="datewidth2">
+          <mat-label>Payment From Date</mat-label>
+          <input matInput [matDatepicker]="picker1" class="textsize" [(ngModel)]="from_date" (dateChange)="getbydate()" (dateInput)="getbydate()">
+          <mat-datepicker-toggle matSuffix [for]="picker1">
+            <img src="assets/images/calendar.svg" matDatepickerToggleIcon width="20px">
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker> 
+        </mat-form-field> 
+        <mat-form-field class="datewidth2">
+          <mat-label>Payment To Date</mat-label>
+          <input matInput [matDatepicker]="picker2" class="textsize" [(ngModel)]="to_date" (dateChange)="getbydate()" (dateInput)="getbydate()">
+          <mat-datepicker-toggle matSuffix [for]="picker2">
+            <img src="assets/images/calendar.svg" matDatepickerToggleIcon width="20px">
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field> 
+  </div>
+  
+<div class="table">
+  <mat-table [dataSource]="dataSource" class="tableborder">
+     
+      <ng-container matColumnDef="paydoc">
+        <mat-header-cell *matHeaderCellDef class="paydoc width1"> Payment Doc </mat-header-cell>
+        <mat-cell *matCellDef="let element;index as i" class="paydoccell width1 cellheight"> 
+          <div fxLayout="row" fxLayoutAlign="space-evenly center" >
+            <div class="divbox" [ngStyle]="{'background-color':i%2==0 ? '#d87e39' : '#6f52ed'}"></div>
+            <label  class="doctext alignpaydoc">{{element.PaymentDoc}}</label>
+          </div>  
+        </mat-cell>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef class="headercolor width2"> Date </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="aligncells boldtext width2 cellheight"> {{element.Date | date:'dd/MM/yyyy'}} </mat-cell>
+      </ng-container>
+    
+      
+      <ng-container matColumnDef="amount">
+        <mat-header-cell *matHeaderCellDef class="headercolor width2"> Amount </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="aligncells boldtext width2 cellheight"> {{element.Amount}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="document">
+        <mat-header-cell *matHeaderCellDef class="headercolor width1"> Document </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="aligncells width1 cellheight"> 
+        <div class="doccss clickable" fxLayout="row" fxLayoutAlign="space-evenly center">
+          <div class="cover" fxLayoutAlign="space-evenly center">
+          <div class="cutebox" fxLayoutAlign="space-evenly center">
+          <img src="assets/images/screen.svg" width="20px" height="16px">
+        </div>
+      </div>
+          <span class="smalltext">{{element.Attachment}}</span>
+        </div>  
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="remark">
+        <mat-header-cell *matHeaderCellDef class="headercolor remborder remark width2"> Remark </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="aligncells remborder boldtext remark width2 cellheight"> {{element.Remark}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6" class="footer">Fetching data...</mat-footer-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"  class="colheader"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+    </mat-table>
+    <mat-progress-bar mode="indeterminate" [ngClass]="{'hide':dataSource!=null}"></mat-progress-bar>
+  </div>
+</div>

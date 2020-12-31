@@ -1,0 +1,59 @@
+<!-- <<mat-drawer-container class="page" >
+  <mat-drawer mode="side" opened class="sidenav">
+    <div fxLayout="column" fxLayoutAlign="space-between center" class="sidenav_height1">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" class="sidenav_height2">
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/menu.svg" width="45px">
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/details.svg" width="28px">
+      <label class="textclass1">My Details</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/order fulfilment.svg" width="26px">
+      <label class="textclass1">Order Fulfilment</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/lookup.svg" width="26px">
+      <label class="textclass1">PO Lookup</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/ASN.svg" width="26px">
+      <label class="textclass1">ASN</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" [ngClass]="{'highlight':flag=='invoice'}" (click)="onClick('invoice')" class="hovereffect">
+      <img src="assets/images/{{ivsrc}}.svg" width="25px" height="30px">
+      <label class="textclass1" [ngStyle]="{'opacity':flag=='invoice'?1:0.4}">Invoice</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" [ngClass]="{'highlight':flag=='payments'}" (click)="onClick('payments')" class="hovereffect">
+      <img src="assets/images/{{paysrc}}.svg" width="28px">
+      <label class="textclass1" [ngStyle]="{'opacity':flag=='payments'?1:0.4}">Payments</label>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="hovereffect">
+      <img src="assets/images/Stock.svg" width="26px">
+      <label class="textclass1">Stocks</label>
+    </div>
+  </div>
+<div fxLayout="column" fxLayoutAlign="space-evenly center" class="sidenav_height3">
+  <div class="seperator1"></div>
+    <div class="clickable">
+      <img src="assets/images/settings.svg" width="20px">
+    </div>
+    <div class="seperator2"></div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="clickable">
+      <img src="assets/images/power.svg" width="15px">
+      <label class="textclass1">Logout</label>
+    </div>
+ </div>
+</div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar class="toolbar">
+      <span>{{page}}</span>
+      <span>
+        <img src="assets/images/logo 2.svg" width="70px" class="adjust_top">
+      </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container> -->
